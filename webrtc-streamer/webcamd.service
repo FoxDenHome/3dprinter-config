@@ -1,0 +1,13 @@
+[Unit]
+Description=WebRTC daemon
+
+[Service]
+ExecStart=/home/webcamd/webrtc-streamer/webrtc-streamer -o v4l2:///dev/video0
+WorkingDirectory=/home/webcamd/webrtc-streamer
+Restart=always
+Type=simple
+User=webcamd
+Group=webcamd
+
+[Install]
+WantedBy=multi-user.target
