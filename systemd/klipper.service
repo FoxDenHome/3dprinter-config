@@ -1,0 +1,14 @@
+[Unit]
+Description=Klippy
+After=network.target
+
+[Service]
+User=klipper
+Group=klipper
+Restart=always
+Type=simple
+ExecStart=/home/klipper/klippy-env/bin/python /home/klipper/klipper/klippy/klippy.py /home/klipper/3dprinter-config/cr6se.cfg -l /tmp/klippy.log -a /tmp/klippy_uds
+
+[Install]
+WantedBy=multi-user.target
+

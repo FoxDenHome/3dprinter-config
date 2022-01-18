@@ -1,0 +1,15 @@
+#Systemd service file for moonraker
+[Unit]
+Description=Starts Moonraker on startup
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=klipper
+RemainAfterExit=yes
+ExecStart=/home/klipper/moonraker-env/bin/python /home/klipper/moonraker/moonraker/moonraker.py -c /home/klipper/3dprinter-config/moonraker.conf
+Restart=always
+RestartSec=10

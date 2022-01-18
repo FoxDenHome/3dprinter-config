@@ -1,0 +1,14 @@
+[Unit]
+Description=Klipper MCU
+After=network.target
+
+[Service]
+User=klipper
+Group=klipper
+Restart=always
+Type=simple
+ExecStart=/home/klipper/klipper.bin
+
+[Install]
+WantedBy=multi-user.target
+

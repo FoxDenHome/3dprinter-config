@@ -1,0 +1,14 @@
+[Unit]
+Description=EStop GPIO
+After=network.target
+
+[Service]
+User=klipper
+Group=klipper
+Restart=always
+Type=simple
+ExecStart=/usr/bin/python3 /home/klipper/3dprinter-config/scripts/estop_button.py 17
+
+[Install]
+WantedBy=multi-user.target
+
